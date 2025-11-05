@@ -1,0 +1,33 @@
+{
+  "languages": [
+    { "name": "Python", "icon": "🐍" },
+    { "name": "JavaScript", "icon": "📜" },
+    { "name": "Java", "icon": "☕" },
+    { "name": "SQL", "icon": "🗄️" },
+    { "name": "HTML", "icon": "🌐" },
+    { "name": "CSS", "icon": "🎨" }
+  ],
+  "frameworks": [
+    { "name": "Flask", "icon": "⚗️" },
+    { "name": "FastAPI", "icon": "⚡" },
+    { "name": "Express.js", "icon": "🚀" },
+    { "name": "React.js", "icon": "⚛️" },
+    { "name": "Bootstrap", "icon": "🎯" },
+    { "name": "Tailwind CSS", "icon": "💨" },
+    { "name": "Java Swing", "icon": "🪟" }
+  ],
+  "databases": [
+    { "name": "MySQL", "icon": "🗃️" },
+    { "name": "PostgreSQL", "icon": "🐘" },
+    { "name": "SQL Server", "icon": "💾" }
+  ],
+  "devops": [
+    { "name": "Docker", "icon": "🐳" },
+    { "name": "Git", "icon": "📦" },
+    { "name": "GitHub", "icon": "🐙" },
+    { "name": "VS Code", "icon": "💻" },
+    { "name": "Visual Studio", "icon": "🔧" },
+    { "name": "SSMS", "icon": "🔍" }
+  ]
+}
+

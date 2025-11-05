@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "company": "Trust Nexus",
+    "position": "Backend Development Intern",
+    "period": "Ongoing",
+    "description": "Contributing to backend systems and DevOps for client projects. Working on API development, database optimization, and deployment pipelines.",
+    "technologies": ["Node.js", "Express.js", "MySQL", "Docker", "Git", "DevOps"]
+  },
+  {
+    "id": 2,
+    "company": "CodeRapido",
+    "position": "Backend Development Intern",
+    "period": "August 2025 - October 2025",
+    "description": "Developed backend APIs with Node.js (Express.js) and MySQL. Implemented RESTful endpoints, database schema design, and API documentation.",
+    "technologies": ["Node.js", "Express.js", "MySQL", "REST API", "Git"]
+  }
+]
+
