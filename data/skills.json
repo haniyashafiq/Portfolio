@@ -8,13 +8,11 @@
     { "name": "CSS", "icon": "🎨" }
   ],
   "frameworks": [
-    { "name": "Flask", "icon": "⚗️" },
     { "name": "FastAPI", "icon": "⚡" },
     { "name": "Express.js", "icon": "🚀" },
     { "name": "React.js", "icon": "⚛️" },
     { "name": "Bootstrap", "icon": "🎯" },
-    { "name": "Tailwind CSS", "icon": "💨" },
-    { "name": "Java Swing", "icon": "🪟" }
+    { "name": "Tailwind CSS", "icon": "💨" }
   ],
   "databases": [
     { "name": "MySQL", "icon": "🗃️" },
