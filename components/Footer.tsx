@@ -7,14 +7,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-cool-gray/20 dark:bg-charcoal border-t border-cool-gray/30 dark:border-cool-gray/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-600 dark:text-gray-400 text-sm"
+            className="text-charcoal/80 dark:text-cool-gray/80 text-sm"
           >
             © {currentYear} Haniya Shafiq — All Rights Reserved
           </motion.p>
@@ -24,7 +24,7 @@ export default function Footer() {
               href={contactData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-dark transition-colors"
+              className="text-charcoal/80 dark:text-cool-gray/80 hover:text-primary dark:hover:text-primary transition-colors"
               whileHover={{ scale: 1.2, y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="GitHub"
@@ -38,7 +38,7 @@ export default function Footer() {
               href={contactData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-dark transition-colors"
+              className="text-charcoal/80 dark:text-cool-gray/80 hover:text-primary dark:hover:text-primary transition-colors"
               whileHover={{ scale: 1.2, y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="LinkedIn"
@@ -50,7 +50,7 @@ export default function Footer() {
 
             <motion.a
               href={`mailto:${contactData.email}`}
-              className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-dark transition-colors"
+              className="text-charcoal/80 dark:text-cool-gray/80 hover:text-primary dark:hover:text-primary transition-colors"
               whileHover={{ scale: 1.2, y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Email"

@@ -13,9 +13,20 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16 bg-soft-ivory dark:bg-charcoal overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      {/* Animated background effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 dark:bg-secondary/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        
+        {/* Geometric shapes */}
+        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/20 dark:border-primary/30 rotate-45 animate-spin-slow" />
+        <div className="absolute bottom-32 left-16 w-24 h-24 border-2 border-secondary/20 dark:border-secondary/30 rotate-12 animate-spin-slow" style={{ animationDelay: '0.5s' }} />
+      </div>
+      
+      <div className="relative max-w-4xl mx-auto text-center z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +42,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4"
+            className="text-xl sm:text-2xl md:text-3xl text-charcoal dark:text-cool-gray mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -40,7 +51,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-charcoal/80 dark:text-cool-gray/80 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -56,7 +67,7 @@ export default function Hero() {
           >
             <motion.button
               onClick={() => scrollToSection('projects')}
-              className="px-8 py-3 bg-primary text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="px-8 py-3 bg-primary text-soft-ivory rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -65,7 +76,7 @@ export default function Hero() {
 
             <motion.button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-3 bg-transparent border-2 border-primary text-primary dark:text-primary-dark rounded-xl font-semibold hover:bg-primary hover:text-white dark:hover:text-white transition-all duration-300"
+              className="px-8 py-3 bg-transparent border-2 border-primary text-primary dark:text-primary rounded-xl font-semibold hover:bg-primary hover:text-soft-ivory dark:hover:text-soft-ivory transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

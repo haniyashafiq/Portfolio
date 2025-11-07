@@ -42,11 +42,11 @@ export default function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+      className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-soft-ivory dark:bg-charcoal"
     >
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-charcoal dark:text-cool-gray"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -55,7 +55,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.p
-          className="text-center text-gray-600 dark:text-gray-400 mb-12 text-lg"
+          className="text-center text-charcoal/80 dark:text-cool-gray/80 mb-12 text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -63,7 +63,7 @@ export default function Contact() {
           I&apos;m always open to discussing new opportunities, freelance projects, or just having a chat about technology.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: -20 }}
@@ -71,13 +71,16 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-charcoal dark:text-cool-gray mb-4">
                 Get in Touch
               </h3>
+              <p className="text-charcoal/80 dark:text-cool-gray/80 mb-6 text-sm leading-relaxed">
+                Feel free to reach out through any of these channels. I typically respond within 24-48 hours.
+              </p>
               <div className="space-y-4">
                 <motion.a
                   href={`mailto:${contactData.email}`}
-                  className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors"
+                  className="flex items-center gap-3 text-charcoal dark:text-cool-gray hover:text-primary dark:hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +93,7 @@ export default function Contact() {
                   href={contactData.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors"
+                  className="flex items-center gap-3 text-charcoal dark:text-cool-gray hover:text-primary dark:hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -103,7 +106,7 @@ export default function Contact() {
                   href={contactData.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-dark transition-colors"
+                  className="flex items-center gap-3 text-charcoal dark:text-cool-gray hover:text-primary dark:hover:text-primary transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -123,7 +126,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-charcoal dark:text-cool-gray mb-2">
                 Name
               </label>
               <input
@@ -133,12 +136,12 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors"
+                className="w-full px-4 py-2 border border-cool-gray/50 dark:border-cool-gray/30 rounded-lg bg-soft-ivory dark:bg-charcoal/80 text-charcoal dark:text-cool-gray focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-charcoal dark:text-cool-gray mb-2">
                 Email
               </label>
               <input
@@ -148,12 +151,12 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors"
+                className="w-full px-4 py-2 border border-cool-gray/50 dark:border-cool-gray/30 rounded-lg bg-soft-ivory dark:bg-charcoal/80 text-charcoal dark:text-cool-gray focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-charcoal dark:text-cool-gray mb-2">
                 Message
               </label>
               <textarea
@@ -162,15 +165,15 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={5}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors resize-none"
+                rows={3}
+                className="w-full px-4 py-2 border border-cool-gray/50 dark:border-cool-gray/30 rounded-lg bg-soft-ivory dark:bg-charcoal/80 text-charcoal dark:text-cool-gray focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors"
               />
             </div>
 
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 bg-primary text-soft-ivory rounded-lg font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
               whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
             >

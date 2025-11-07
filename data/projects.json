@@ -6,7 +6,7 @@
     "techStack": ["React.js", "Node.js", "Express.js", "Socket.io", "MongoDB", "WebRTC", "Tailwind CSS"],
     "githubUrl": "https://github.com/haniyashafiq/collaborative-study-room",
     "liveUrl": "#",
-    "image": "/images/projects/collaborative-study-room.jpg"
+    "image": ""
   },
   {
     "id": 2,
@@ -15,25 +15,25 @@
     "techStack": ["React.js", "Node.js", "Express.js", "PostgreSQL", "JWT", "Bootstrap", "REST API"],
     "githubUrl": "https://github.com/haniyashafiq/personal-task-manager",
     "liveUrl": "#",
-    "image": "/images/projects/personal-task-manager.jpg"
+    "image": ""
   },
   {
     "id": 3,
     "title": "Job Portal Backend",
     "description": "A robust backend API for a job portal platform handling job postings, applications, user authentication, and search functionality. Includes role-based access control.",
     "techStack": ["Node.js", "Express.js", "MySQL", "JWT", "REST API", "Bcrypt", "Sequelize"],
-    "githubUrl": "https://github.com/haniyashafiq/job-portal-backend",
+    "githubUrl": "https://github.com/haniyashafiq/JobPortal",
     "liveUrl": "#",
-    "image": "/images/projects/job-portal.jpg"
+    "image": ""
   },
   {
     "id": 4,
     "title": "E-Commerce REST API",
     "description": "A complete e-commerce backend API with product management, shopping cart, order processing, payment integration, and admin dashboard. Scalable and secure architecture.",
     "techStack": ["Node.js", "Express.js", "PostgreSQL", "JWT", "Stripe API", "REST API", "Swagger"],
-    "githubUrl": "https://github.com/haniyashafiq/ecommerce-rest-api",
+    "githubUrl": "https://github.com/haniyashafiq/E-Commerce-REST-API",
     "liveUrl": "#",
-    "image": "/images/projects/ecommerce-api.jpg"
+    "image": ""
   }
 ]
 

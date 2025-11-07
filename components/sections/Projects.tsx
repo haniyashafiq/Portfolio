@@ -8,9 +8,10 @@ import projectsData from '@/data/projects.json'
 function ProjectImage({ src, alt, title }: { src: string; alt: string; title: string }) {
   const [imageError, setImageError] = useState(false)
 
-  if (imageError) {
+  // If no image source or empty string, show fallback immediately
+  if (!src || src.trim() === '' || imageError) {
     return (
-      <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-primary/30 dark:text-primary-dark/30">
+      <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-primary/30 dark:text-primary/30 bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20">
         {title.charAt(0)}
       </div>
     )
@@ -24,7 +25,7 @@ function ProjectImage({ src, alt, title }: { src: string; alt: string; title: st
         className="absolute inset-0 w-full h-full object-cover"
         onError={() => setImageError(true)}
       />
-      <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-primary/30 dark:text-primary-dark/30 pointer-events-none opacity-0">
+      <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-primary/30 dark:text-primary/30 pointer-events-none opacity-0">
         {title.charAt(0)}
       </div>
     </>
@@ -39,11 +40,11 @@ export default function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-soft-ivory dark:bg-charcoal"
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-charcoal dark:text-cool-gray"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -55,22 +56,22 @@ export default function Projects() {
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
-              className="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-soft dark:shadow-soft-dark hover:shadow-xl dark:hover:shadow-soft-dark transition-all duration-300"
+              className="bg-cool-gray/20 dark:bg-charcoal/80 rounded-2xl overflow-hidden shadow-soft dark:shadow-soft-dark hover:shadow-xl dark:hover:shadow-soft-dark transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <div className="relative h-48 w-full bg-gradient-to-br from-primary/20 to-secondary/20 dark:from-primary-dark/20 dark:to-secondary-dark/20 flex items-center justify-center overflow-hidden">
+              <div className="relative h-48 w-full bg-gradient-to-br from-primary/20 to-secondary/20 dark:from-primary/20 dark:to-secondary/20 flex items-center justify-center overflow-hidden">
                 <ProjectImage src={project.image} alt={project.title} title={project.title} />
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-2xl font-bold text-charcoal dark:text-cool-gray mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                <p className="text-charcoal dark:text-cool-gray mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -78,7 +79,7 @@ export default function Projects() {
                   {project.techStack.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-xs font-medium bg-primary/10 dark:bg-primary-dark/20 text-primary dark:text-primary-dark rounded-full"
+                      className="px-3 py-1 text-xs font-medium bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-full"
                     >
                       {tech}
                     </span>
@@ -90,7 +91,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-charcoal dark:bg-charcoal/80 text-soft-ivory rounded-lg hover:bg-charcoal/90 dark:hover:bg-charcoal transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

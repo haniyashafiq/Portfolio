@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --background: #FFFFE3;
+  --foreground: #4A4A4A;
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-mono: 'Roboto Mono', monospace;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
+  --background: #2A2A2A;
+  --foreground: #CBCBCB;
 }
 
 * {
@@ -47,12 +47,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #6D8196;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #5a6b7d;
 }
 
 /* Smooth transitions for dark mode */
@@ -60,5 +60,34 @@ body {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Animated background effects */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
 

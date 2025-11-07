@@ -13,13 +13,16 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         primary: {
-          DEFAULT: '#6366f1',
-          dark: '#4f46e5',
+          DEFAULT: '#6D8196',
+          dark: '#5a6b7d',
         },
         secondary: {
-          DEFAULT: '#8b5cf6',
-          dark: '#7c3aed',
+          DEFAULT: '#CBCBCB',
+          dark: '#A8A8A8',
         },
+        charcoal: '#4A4A4A',
+        'cool-gray': '#CBCBCB',
+        'soft-ivory': '#FFFFE3',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
