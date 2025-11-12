@@ -11,6 +11,7 @@ A modern, professional portfolio website built with Next.js, TypeScript, Tailwin
 - 🔍 SEO optimized with meta tags
 - ♿ Accessible and user-friendly
 - 🎯 Professional presentation for recruiters and clients
+- 📧 Functional contact form powered by Web3Forms
 
 ## Tech Stack
 
@@ -46,6 +47,26 @@ npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Contact Form Setup (Web3Forms)
+
+The contact form is integrated with [Web3Forms](https://web3forms.com) for handling form submissions. To make it functional:
+
+1. Get your access key:
+   - Visit [https://web3forms.com](https://web3forms.com)
+   - Enter your email address to receive a free access key
+   - Copy the access key provided
+
+2. Create a `.env.local` file in the root directory:
+   ```bash
+   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_access_key_here
+   ```
+
+3. Replace `your_access_key_here` with your actual Web3Forms access key
+
+4. Restart your development server for the changes to take effect
+
+**Note:** For production deployments (e.g., Vercel, Netlify), add the `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` environment variable in your platform's environment variable settings.
 
 ### Build for Production
 

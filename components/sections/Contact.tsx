@@ -14,21 +14,77 @@ export default function Contact() {
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setSubmitMessage('')
     
-    // Here you would typically send the form data to an API endpoint
-    // For now, we'll just log it and show a message
-    console.log('Form submitted:', formData)
-    
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+      
+      if (!accessKey) {
+        throw new Error('Web3Forms access key is not configured. Please add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to your environment variables.')
+      }
+
+      const formPayload = {
+        access_key: accessKey,
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        subject: `New Contact Form Submission from ${formData.name}`,
+        from_name: 'Portfolio Contact Form',
+      }
+
+      // Debug logging (remove in production if needed)
+      console.log('Submitting form to Web3Forms...', {
+        hasAccessKey: !!accessKey,
+        accessKeyLength: accessKey?.length,
+        formData: { ...formData, email: formData.email ? '***' : '' }
+      })
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formPayload),
+      })
+
+      const result = await response.json()
+
+      // Debug logging
+      console.log('Web3Forms response:', result)
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success')
+        setSubmitMessage('Thank you for your message! I\'ll get back to you soon.')
+        setFormData({ name: '', email: '', message: '' })
+        
+        // Additional info for debugging
+        if (result.message) {
+          console.log('Web3Forms message:', result.message)
+        }
+      } else {
+        // More detailed error message
+        const errorMsg = result.message || result.error || 'Failed to send message'
+        console.error('Web3Forms error:', result)
+        throw new Error(errorMsg)
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Something went wrong. Please try again later.'
+      setSubmitMessage(errorMessage)
+      console.error('Form submission error:', error)
+    } finally {
       setIsSubmitting(false)
-      alert('Thank you for your message! I\'ll get back to you soon.')
-      setFormData({ name: '', email: '', message: '' })
-    }, 1000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -169,6 +225,20 @@ export default function Contact() {
                 className="w-full px-4 py-2 border border-cool-gray/50 dark:border-cool-gray/30 rounded-lg bg-soft-ivory dark:bg-charcoal/80 text-charcoal dark:text-cool-gray focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors"
               />
             </div>
+
+            {submitStatus !== 'idle' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`p-4 rounded-lg ${
+                  submitStatus === 'success'
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200'
+                    : 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200'
+                }`}
+              >
+                <p className="text-sm font-medium">{submitMessage}</p>
+              </motion.div>
+            )}
 
             <motion.button
               type="submit"
