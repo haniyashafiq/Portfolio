@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import GitHubStats from '@/components/GitHubStats'
 
 export default function About() {
   const ref = useRef(null)
@@ -53,7 +52,6 @@ export default function About() {
           </p>
         </motion.div>
 
-        <GitHubStats />
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
@@ -19,11 +20,14 @@ function ProjectImage({ src, alt, title }: { src: string; alt: string; title: st
 
   return (
     <>
-      <img
+      <Image
         src={src}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-cover"
         onError={() => setImageError(true)}
+        priority={false}
       />
       <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-primary/30 dark:text-primary/30 pointer-events-none opacity-0">
         {title.charAt(0)}
