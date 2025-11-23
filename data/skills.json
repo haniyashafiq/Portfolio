@@ -2,7 +2,6 @@
   "languages": [
     { "name": "Python", "icon": "🐍" },
     { "name": "JavaScript", "icon": "📜" },
-    { "name": "Java", "icon": "☕" },
     { "name": "SQL", "icon": "🗄️" },
     { "name": "HTML", "icon": "🌐" },
     { "name": "CSS", "icon": "🎨" }
@@ -23,9 +22,8 @@
     { "name": "Docker", "icon": "🐳" },
     { "name": "Git", "icon": "📦" },
     { "name": "GitHub", "icon": "🐙" },
-    { "name": "VS Code", "icon": "💻" },
-    { "name": "Visual Studio", "icon": "🔧" },
-    { "name": "SSMS", "icon": "🔍" }
+    { "name": "VS Code", "icon": "💻" }
+  
   ]
 }
 
