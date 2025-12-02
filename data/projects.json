@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "Job Portal Backend",
-    "description": "A robust backend API for a job portal platform handling job postings, applications, user authentication, and search functionality. Includes role-based access control.",
+    "description": "A robust backend API for a job portal platform handling job postings, applications, user authentication, and search functionality.",
     "techStack": ["Node.js", "Express.js", "MySQL", "JWT", "REST API"],
     "githubUrl": "https://github.com/haniyashafiq/JobPortal",
     "liveUrl": "#",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "E-Commerce REST API",
-    "description": "A complete e-commerce backend API with product management, shopping cart, order processing, payment integration, and admin dashboard. Scalable and secure architecture.",
+    "description": "An e-commerce API with product management, order processing, and user management.",
     "techStack": ["Node.js", "Express.js", "MySQL", "JWT", "REST API"],
     "githubUrl": "https://github.com/haniyashafiq/E-Commerce-REST-API",
     "liveUrl": "#",
